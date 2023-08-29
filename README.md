@@ -13,5 +13,5 @@ git-bash
 7. git push origin master - 원격저장소의 master 브랜치에 소스 보내기
 
 처음에 한번만 이메일과 유저명 확인
-git config --global user.name "[사용자명]"
-git config --global user.email "[사용자이메일]"
+git config --global user.name "[사용자명]"  
+git config --global user.email "[사용자이메일]"  
