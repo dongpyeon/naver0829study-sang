@@ -16,7 +16,7 @@ public class OperEx7 {
 		System.out.println(kor>=95 || eng>=95 && mat>=95); //true
 		
 		
-		// 윤녀계산
+		// 윤년계산
 		int year=2023;
 		System.out.println(year%4==0 && year%100!=0 || year%400==0);
 	}
