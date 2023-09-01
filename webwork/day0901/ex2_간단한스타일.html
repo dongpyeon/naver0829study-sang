@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Lobster&display=swap" rel="stylesheet">
+    <!-- 문서 삽입형 스타일 적용-->
+    <style>
+        /*style 영에서의 주석처리 */
+        span{
+            font-family: 'Lobster';
+        }
+        /*class:., id:# 으로 스타일 적용*/
+        .one{ /*태그 상관없이 class 명이 one 인경우 모두 적용 */
+            font-size: 40px;
+        }
+        div.one{ /*div 태그의 one class에만 적용*/
+            color: red;
+        }
+        .two,span.three{ /*class가 two인 모든 태그 그리고 span태그중 class가 three인 class에만 적용*/
+            background-color: blue;
+        }
+
+        /*div 태그중 클래스명이 one,three인 경우에만 border적용*/ /*굴기, 선종류, 색상: 따로 줘도 되고 같이 줘도 된다. */
+        div.one,div.three{
+            border: 5px solid darkseagreen;
+        }
+        h1{
+            border-width: 10px;
+            border-style: double;
+            border-color: darkmagenta;
+            border-radius: 20px; /*둥근 테두리선*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 스타일정의 : 태그 삽입형-->
+    <h1>오늘 날씨가 좋아요</h1>
+    <h1 style="color:peru; font-family: 'Bagel Fat One';background-color: #f084;">아름다운 밤이에요</h1>
+    <h1 style="color: #6C349E;background-color: rgba(158, 33,74,0.5);font-family: Gamja Flower;">今天天气很好，我们一起去出去吧！</h1>
+    <span class="one">Java</span>
+    <span class="two">HTML</span>
+    <span class="three">JavaScript</span>
+    <hr>
+    <div class="one">아우디</div>
+    <div class="two">렉서스</div>
+    <div class="three">벤츠</div>
+</body>
+</html>
