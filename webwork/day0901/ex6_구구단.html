@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        h3.title{
+            color: blueviolet;
+            background-color: aquamarine;
+            width:  300px;
+            padding-left: 150px; /*태그 안쪽 여백 */
+        }
+
+        h4{
+            font-family: "Bagel Fat One";
+            color: rgb(13, 123, 54);
+            margin-left: 100px;  /*태그 바깥쪽 여백*/
+        }
+    </style>
 </head>
 <body>
     <!-- 
         구구단 숫자 2~9까지 입력을 받아서 해당 구구단을 출력하시오
         단, 2~9사이의 값이 아닐 경우 '이미지(아무거나)출력하기'
     -->
+    <h2>구구단 입력받아 출력하기</h2>
+    <script>
+        // let answer = prompt("숫자를 입력하시오");
+        // if(answer<2 || answer>9)
+        //     {
+        //         document.write(`잘못 입력하셨습니다.<br>`)
+        //         document.write(`<img alt="자동차" src="../mycar/mycar2.png" width=150 border="2" hspace="10">`)
+        //     }else
+        //     {
+        //         document.write(`<b>${answer}단<br>`)
+        //         for (let i = 1; i<=9; i++)
+        //         {
+        //             document.write(`<b>${answer}x${i}=${answer * i}<br>`)
+        //         }
+        //     }
+        //강사님 답
+            let dan=Number(prompt("구구단을 입력하세요"));
+            console.log(typeof (dan));18
+            if(dan<2 || dan >9){
+                document.write("<img alt='사진' src='../mycar/mycar2.png' width=200>");
+            }else{
+                let s="<h3 class='title'> ** " +dan+"단 **</h3><br>";
+                for(let i=1; i<=9; i++)
+                {
+                    s+=`<h4>${dan} x ${i} = ${dan*i}</h4>`
+                }
+                document.write(s);
+            }
     </script>
 </body>
 </html>

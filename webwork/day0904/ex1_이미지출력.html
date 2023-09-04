@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        figure{
+            float: left;
+        }
+        /*공백: 모든 하위태그,>:바로아래의 태그를 의미*/
+        figure>img{
+            width: 130px;
+            height: 160px;
+            border: 3px inset gray;
+        } /*이 부분 추가*/
+
+        figure>figcaption>h3>b{
+            font-family: 'Dongle';
+            margin-left: 50px;
+            color: green;
+        } /*이 부분 추가 2*/
+    </style>
+</head>
+<body>
+    <img src="../mycar/mycar13.png" width="150" alt="자동차">
+    <img src="../mycar/mycar7.png" width="150" alt="자동차">
+    <img src="../mycar/mycar8.png" width="150" alt="자동차">
+    <br>
+    <b>분홍차</b>
+    <b style="margin-left: 100px;">노랑쿠페</b>
+    <b style="margin-left: 100px;">흰차</b>
+    <hr>
+    <figure>
+        <img src="../연예인사진/14.jpg"> 
+        <figcaption>
+            <h3><b>유승호</b></h3>
+        </figcaption>
+    </figure>
+    <figure>
+        <img src="../연예인사진/6.jpg"> 
+        <figcaption>
+            <h3><b>한예슬</b></h3>
+        </figcaption>
+    </figure>
+</body>
+</html>

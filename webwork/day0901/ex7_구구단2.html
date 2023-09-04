@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div.gugu{
+            float:left; /*태그를 우측방향으로 나열*/
+            width:150px;
+            font-family: 'Impact';
+        }
+    </style>
 </head>
 <body>
         <!-- 
@@ -11,5 +18,52 @@
         (가로방향 - 자바에서처럼)
         단, start가 end보다 클경우 그 값을 서로 바꾼후 출력하시오
     -->
+    <h2>구구단 출력하기(다중 for문)연습</h2>
+    <script>
+        // let start = prompt("start 숫자를 입력하시오");
+        // let end = prompt("end 숫자를 입력하시오");
+        // if(start>end)
+        //     {
+        //     let temp = start;
+        //     start = end;
+        //     end = temp;
+        //     }
+        //     //제목
+        //     for (let i=start; i<=end; i++)
+        //     {
+        //         document.write(`<b>&nbsp;&nbsp;${i}단</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp`)                  
+        //     }
+        //     document.write(`<br>`)
+        //     //바디
+        //     for (let j = 1; j<=9; j++)
+        //     {
+        //         for (let i=start; i<=end; i++)
+        //         {
+        //             document.write(`${i}&nbsp;x&nbsp;${j}&nbsp;=&nbsp;${i * j}&nbsp;&nbsp;&nbsp;&nbsp;`)
+        //         }
+        //         document.write(`<br>`)
+        // }
+            let start=Number(prompt("구구단을 출력할 시작단 입력"));
+            let end=Number(prompt("구구단을 출력할 끝단 입력"));
+            //start가 end보다 클 경우 두값 서로 바꾸기
+            if(start>end)
+            {
+                let temp=start;
+                start =end;
+                end=temp;
+            }
+            document.write(`<h2>start=${start}, end=${end}</h2>`);
+            let s="";
+            for(let i=1; i<=9;i++)
+            {
+                for(let dan=start; dan<=end;dan++)
+                {
+                    s+=`<div class="gugu">${dan}x${i}=${dan*i}</div>`;
+                }
+                s+="<br>";
+            }
+            document.write(s);
+            
+    </script>
 </body>
 </html>
