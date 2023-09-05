@@ -12,7 +12,7 @@ public class Ex7_Format {
 		Date date=new Date();
 		
 		//패턴 1
-		SimpleDateFormat dateFormat1=new SimpleDateFormat("yyy-MM-dd HH:mm:ss EEE"); // MM:월, mm:분, EEE: 요일짧게 HH: 24시간 기준
+		SimpleDateFormat dateFormat1=new SimpleDateFormat("yy-MM-dd HH:mm:ss EEE"); // MM:월, mm:분, EEE: 요일짧게 HH: 24시간 기준
 		System.out.println(dateFormat1.format(date));
 		
 		//패던 2

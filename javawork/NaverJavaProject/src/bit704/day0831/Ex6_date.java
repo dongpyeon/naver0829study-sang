@@ -15,7 +15,7 @@ public class Ex6_date {
 		int day=sc.nextInt();
 
 		//Date 클래스 생성
-		Date date=new Date(year-1900,month-1,day);
+		Date date=new Date(year,month-1,day);
 		//요일 구하기
 		int weekint = date.getDay(); //0: 일요일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
 		System.out.println("요일 숫자: " + weekint);

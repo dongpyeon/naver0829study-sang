@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="button" value="새로운 난수 발생하기" id="btnrnd">
-
-    <script>
-        let rnd; //난수를 구할 변수
-        //난수 버튼 이벤트
-        document.getElementById("btnrnd").onclick=function(){
-            //1~100 사이의 난수구하기
-            rnd=parseInt(Math.random()*100)+1;
-            //console에 출력
-            console.log(rnd);
+    <style>
+                .a{
+            width: 100px;
+            height:100px;
+            border: 2px groove gray;
+            border-radius: 100px;
         }
+        #msg{
+        width: 400px;
+        border: 2px solid gray;
+        height: 400px;
+        padding: 200x 10px; /*top left*/
+        font-size: 20px;
+        margin-top:  30px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="새로운 난수 발생하기" id="btnrnd" /><br />
+    <input type="text" id="txtmsg" />
+    <input type="button" id="btn1" value="OK" />
+    <div id="msg">Messeg 출력되는 곳</div>
+    <script>
+      let rnd; //난수를 구할 변수
+      //난수 버튼 이벤트
+      document.getElementById("btnrnd").onclick = function () {
+        //1~100 사이의 난수구하기
+        rnd = parseInt(Math.random() * 100) + 1;
+        //console에 출력
+        console.log(rnd);
+        alert("난수가 발생되었습니다.")
+      }
+        let t = document.getElementById("txtmsg");
+        let b = document.getElementById("btn1");
+        let msg = document.getElementById("msg");
+        b.onclick = function () {
+          let data = parseInt(t.value);
 
+          while (true) {
+            if (data > rnd) {
+              msg.innerHTML += `<br>${data}  보다 큽니다.`;
+              break;
+            } else if (data < rnd) {
+              msg.innerHTML += `<br>${data} 보다 작습니다.`;
+              break;
+            } else {
+                let s=parseInt(Math.random()*15)+1;
+                msg.innerHTML += "<br>정답입니다.<br>";
+                msg.innerHTML+=`<br><img class="a" src="../mycar/mycar${s}.png" width="150" alt="자동차">`;
+                break;
+            }
+        }
+          t.value = "";
+          t.focus();
+        };
     </script>
-</body>
+  </body>
 </html>
