@@ -12,4 +12,14 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="afterclass.Ex_Calculator"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="bit701.day0912.Ex3_FileBankRead"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="bit701.day0912.SuperC"/>
+    <fullyQualifiedTypeName name="afterclass.Book_296"/>
+    <fullyQualifiedTypeName name="afterclass.Airpalane"/>
+    <fullyQualifiedTypeName name="afterclass.SupersonicAirpalne"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="afterclass.Ex_Sungjuk"/>
 </qualifiedTypeNameHistroy>
