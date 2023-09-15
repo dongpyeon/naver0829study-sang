@@ -1,6 +1,7 @@
 package bit701.day0915;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -35,6 +36,7 @@ public class SwingGibon extends JFrame {
 			}
 		});
 	}
+	
 	
 	private void setDesign() {
 		// TODO Auto-generated method stub
