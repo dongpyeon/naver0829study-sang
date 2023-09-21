@@ -66,3 +66,39 @@ drop table test;
 --시퀀스 제거
 drop sequence seq_test;
 rollback; -- DML(insert, delete, update)만 롤백되고 drop은 안됨
+---------------------------------------------------------------
+create table person(
+    num number(3) CONSTRAINT person_pk_num primary key,
+    blood char(2));
+    
+
+--기존 제약조건 제거
+alter table person drop CONSTRAINT person_pk_num;
+
+--다시 primary key에 대한 제약조건 추가
+alter table person add constraint person_num_pk primary key(num);
+
+--blood에 대해서 check제약조건 추가
+alter table person add constraint person_ck_blood check (blood in ('A','B','O','AB'));
+insert into person values(1,'A');
+insert into person values(1,'B'); --오류:무결성 제약 조건(ANGEL.PERSON_NUM_PK)에 위배됩니다
+insert into person values(2,'b'); --오류:체크 제약조건(ANGEL.PERSON_CK_BLOOD)이 위배되었습니다
+insert into person values(2,'O');
+
+--칼럼을 추가
+alter table person add name varchar2(20);
+alter table person add score number(5,2) default 30.5;
+
+--컬럼명 제거 (drop column num)
+alter table person drop column num;
+
+--java라는 컬럼을 number 타입으로 추가 후 1~100 사이값만 들어오도록 제약조건 추가
+alter table person add java number(3) default 0;
+alter table person add constraint person_ck_java check(java>=0 and java<=100);
+
+alter table person rename column java to spring;
+
+--데이터 추가시 컬럼 순서대로 주기싫을경우 컬러명 주면된다.
+insert into person (name,blood,spring,score) values('lee','O',90,35);
+
+drop table person;
