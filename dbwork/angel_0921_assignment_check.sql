@@ -3,7 +3,7 @@
 --  java 숫자(3) 기본값 10,spring 숫자(3) 기본값 10, ban 문자열(20)
 
 create table student(
-    num varchar2(5),
+    num number(5),
     name varchar2(10),
     height number(5,1),
     java number(3) default 10,
@@ -19,7 +19,6 @@ create sequence seq_stu start with 1 increment by 1 nocache;
 --제약조건들 추가
 --num  에 primary key 추가(student_pk_nu)
 alter table student add constraint student_pk_num primary key(num);
-
 
 --java,spring 은 1~100 만 가능하도록 check 제약조건 추가
 alter table student add constraint student_ck_java check(java>=1 and java<=100);
@@ -80,3 +79,5 @@ ORDER BY
     
 drop table student;
 drop sequence seq_stu;
+
+alter table student modify column num number(5);
