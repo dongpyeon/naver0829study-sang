@@ -321,10 +321,40 @@ BEGIN
         DBMS_Output.put_line('상품번호  상품명   가격');
         DBMS_Output.put_line('---------------------');
         for f in s1 loop
-            exit when f1%notfound;
             DBMS_Output.put_line(f.food_num||'   '||f.fname||'   '
             ||f.fprice);
+            exit when f1%notfound;
         end loop;
     end if;
+end;
+/
+
+
+--강사님
+
+accept iname prompt 'food name?';
+accept iprice prompt 'food price?';
+accept ino prompt 'no?';
+DECLARE
+   v_no number(1) := '&ino';
+   v_fname food.fname%TYPE := '&iname';
+   v_fprice food.fprice%TYPE := '&iprice';
+   
+   Cursor s1
+   is
+   select * from food;
+BEGIN
+  if v_no=1 then
+      insert into food values (seq_food.nextval,v_fname,v_fprice);
+      commit;
+      DBMS_Output.put_line('메뉴를 추가했습니다');
+  else
+      DBMS_Output.put_line('메뉴번호  메뉴명   가격');
+      DBMS_Output.put_line('---------------------');
+      for s in s1 loop
+          DBMS_Output.put_line(s.food_num||'  '||s.fname||'  '||s.fprice);
+         exit when s1%notfound;
+      end loop;
+  end if;
 end;
 /
