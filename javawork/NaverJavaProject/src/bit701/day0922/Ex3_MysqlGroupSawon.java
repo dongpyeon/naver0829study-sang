@@ -6,12 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Ex2_MysqlJdbc {
+public class Ex3_MysqlGroupSawon {
 	static final String MYSQL_DRIVER="com.mysql.cj.jdbc.Driver";
 	static final String MYSQL_URL="jdbc:mysql://localhost:3306/bit701?serverTimezone=Asia/Seoul";
 	
-	public Ex2_MysqlJdbc() {
-		// TODO Auto-generated constructor stub
+	public Ex3_MysqlGroupSawon() {
 		try {
 			Class.forName(MYSQL_DRIVER);
 			//System.out.println("MysqL 드라이버 성공");
@@ -20,7 +19,7 @@ public class Ex2_MysqlJdbc {
 		}
 	}
 	
-	public void sawaonAlldatas()
+	public void saWonBunseok()
 	{
 		Connection conn=null;
 		try {
@@ -29,48 +28,35 @@ public class Ex2_MysqlJdbc {
 			
 			Statement stmt=null;
 			ResultSet rs=null;
-		      String sql = null;
-		      sql = "SELECT * "
-		         + "FROM sawon "
-		         + "ORDER BY num";
 			
+			String sql="select buseo,count(*) count, max(score) maxscore, min(score) minscore,avg(score) avgscore \r\n"
+					+ "from sawon group by buseo";
 			conn=DriverManager.getConnection(MYSQL_URL, "root", "1234");
-			
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(sql);
 			
-			System.out.println("번호\t이름\t점수\t성별\t부서");
+			System.out.println("부서\t인원수\t최고점수\t최저점수\t평균");
 			System.out.println();
-			int total=0;
-			int count=0;
-			double avg;
 			while(rs.next())
 			{
-				int num=rs.getInt("num");
-				String name=rs.getString("name");
-				int score=rs.getInt("score");
-				String gender=rs.getString("gender");
-				String buseo=rs.getString("gender");
+				String buseo=rs.getString("buseo");
+				int maxscore=rs.getInt("maxscore");
+				int minscore=rs.getInt("minscore");
+				int count=rs.getInt("count");
+				double AVG=rs.getDouble("avgscore");
 				
-				total += score;
-				count++;
-				
-				System.out.println(num+"\t"+name+"\t"+score+"\t"+gender+"\t"+buseo);
+				System.out.println(buseo+"\t"+count+"\t"+maxscore+"\t"+minscore+"\t"+AVG);
 			}
-			System.out.println("\n총 점수: "+total);
-			avg=(double)total/count;
-			System.out.printf("평균: %3.1f\n",avg);
 		} catch (SQLException e) {
 			System.out.println("Mysql 연결 실패: "+e.getMessage());
 		}
-		
-		
-	}
-	
+		}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Ex2_MysqlJdbc ex= new Ex2_MysqlJdbc();
-		ex.sawaonAlldatas();
+		Ex3_MysqlGroupSawon ex = new Ex3_MysqlGroupSawon();
+		ex.saWonBunseok();
+
 	}
 
 }
