@@ -21,7 +21,7 @@ public class Ex8_SawonSearch {
 					SELECT *
 					FROM sawon
 					WHERE name
-					LIKE ?
+					LIKE '%' ? '%'
 				""";
 		
 		Connection conn=db.getMysqlConnection();
@@ -31,7 +31,7 @@ public class Ex8_SawonSearch {
 		try {
 			pstmt=conn.prepareStatement(sql);
 			//바인딩
-			pstmt.setString(1, "%"+name+"%");
+			pstmt.setString(1, name);
 			//실행
 			rs=pstmt.executeQuery();
 			System.out.println("검색 결과");
@@ -56,6 +56,8 @@ public class Ex8_SawonSearch {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
 		}
 		
 		
