@@ -42,7 +42,7 @@ public class Ex1_StudentSwingCRUD extends JFrame {
 	this.setDesign();
 	this.setVisible(true);
 	
-	this.addWindowFocusListener(new WindowAdapter() {
+	this.addWindowListener(new WindowAdapter() {
 		@Override
 		public void windowClosing(WindowEvent e) {
 			// TODO Auto-generated method stub

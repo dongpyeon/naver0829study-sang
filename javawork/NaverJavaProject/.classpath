@@ -6,11 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/bitcamp1/Downloads/mysql-connector-java-8.0.22.jar"/>
-	<classpathentry kind="lib" path="C:/Users/bitcamp1/Downloads/ojdbc8.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/bitcamp1/Downloads/설치파일/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bitcamp1/Downloads/설치파일/mysql-connector-java-8.0.22.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
