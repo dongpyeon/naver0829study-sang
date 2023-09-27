@@ -123,6 +123,8 @@ public class Ex_PracticeSwing extends JFrame{
 					score=0;
 				}
 
+				String grade = calculateGrade(score);
+				
 				String phone = tfPhone.getText();
 				String blood = (String)cbBlood.getSelectedItem();
 				String job = (String)cbJob.getSelectedItem();
@@ -247,17 +249,7 @@ public class Ex_PracticeSwing extends JFrame{
 				String num = rs.getString("num");
 				String name = rs.getString("name");
 				int score = rs.getInt("score");
-				String grade;
-				if (score >= 90)
-					grade = "A";
-				else if (score >= 80)
-					grade = "B";
-				else if (score >= 70)
-					grade = "C";
-				else if (score >= 60)
-					grade = "D";
-				else
-					grade = "F";
+				String grade = calculateGrade(score);
 				String phone = rs.getString("phone");
 				String blood = rs.getString("blood");
 				String job = rs.getString("job");
@@ -365,17 +357,7 @@ public class Ex_PracticeSwing extends JFrame{
 				String num = rs.getString("num");
 				String name = rs.getString("name");
 				int score = rs.getInt("score");
-				String grade;
-				if (score >= 90)
-					grade = "A";
-				else if (score >= 80)
-					grade = "B";
-				else if (score >= 70)
-					grade = "C";
-				else if (score >= 60)
-					grade = "D";
-				else
-					grade = "F";
+				String grade = calculateGrade(score);
 				String phone = rs.getString("phone");
 				String blood = rs.getString("blood");
 				String job = rs.getString("job");
@@ -425,23 +407,15 @@ public class Ex_PracticeSwing extends JFrame{
 				String num = rs.getString("num");
 				String name = rs.getString("name");
 				int score = rs.getInt("score");
-				String grade;
-				if (score >= 90)
-					grade = "A";
-				else if (score >= 80)
-					grade = "B";
-				else if (score >= 70)
-					grade = "C";
-				else if (score >= 60)
-					grade = "D";
-				else
-					grade = "F";
+
 				String phone = rs.getString("phone");
 				String blood = rs.getString("blood");
 				String job = rs.getString("job");
 				Timestamp ts = rs.getTimestamp("writeday");
 				String writeday = sdf.format(ts);
-
+				
+				String grade = calculateGrade(score);
+				
 				data.add(num);
 				data.add(name);
 				data.add(String.valueOf(score));
@@ -460,4 +434,19 @@ public class Ex_PracticeSwing extends JFrame{
 		}
 	}
 
+    public String calculateGrade(int score) {
+        switch (score / 10) {
+            case 10:
+            case 9:
+                return "A";
+            case 8:
+                return "B";
+            case 7:
+                return "C";
+            case 6:
+                return "D";
+            default:
+                return "F";
+        }
+    }
 }
