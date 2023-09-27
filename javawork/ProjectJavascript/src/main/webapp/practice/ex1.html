@@ -9,6 +9,40 @@
 	body * {
 		font-family: 'Jua';
 	}
+	div.a{
+		border: 2px solid #343;
+		width: 200px;
+		height: 200px;
+		float:left; /*왼쪽으로 배열 */
+		margin:20px; /*border 바깥이 margin*/
+		padding: 40px; /*border 안에를 padding*/
+	}
+	
+	div.a img{ /*이미지 크기 조정*/
+		height: 100px;
+		width: 100px;
+	}
+	
+	#img1{
+		transform:translate(50px, 30px); /*사진의 위치를 이동*/
+		/*각 브라우저에서 브라우징 테스트할 경우 아래와 같이 코드를 넣는다.
+		이미지가 제대로 나오는지 확인하기 위한 작업할때 넣는다.*/
+		-webkit-transform: translate(50px, 30px); /*크롬 사파리*/
+		-o-transform: translate(50px, 30px); /*오페라*/
+		-moz-transform: translate(50px, 30px); /*익스플로러*/
+	}
+	
+	#img2{
+		transform:rotate(50deg); /*50도 회전*/
+	}
+	
+	#img3{
+		transform:scale(1.5) /*1.5배확대*/ 
+	}
+	#img4{
+		transform:skew(30deg, 50deg) /*x,y방향으로 경사변형을 준다.*/
+	}
+	
 </style>
 <script>
 	window.onload=function(){
@@ -17,6 +51,18 @@
 </script>
 </head>
 <body>
+	<div id="img1" class="a">
+		<img src="../image/C1.png">
+	</div>
+	<div id="img2" class="a">
+		<img src="../image/C2.png">
+	</div>
+	<div id="img3" class="a">
+		<img src="../image/C3.png">
+	</div>
+	<div id="img4" class="a">
+		<img src="../image/C4.png">
+	</div>
 	
 </body>
 </html>
