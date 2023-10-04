@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+</style>
+ <script>
+        // JavaScript 섹션
+        let col = 5; // 초기 이미지 열 갯수를 5로 설정
+
+        // 웹 페이지 로드 시 실행
+        window.onload = function() {
+            imageview(); // 이미지를 표시하는 함수 호출
+
+            // 이미지 열 갯수를 선택하는 드롭다운 메뉴의 변경 이벤트 처리
+            document.querySelector(".selcol").onchange = function() {
+                col = this.value; // 선택한 열 수를 변수 col에 업데이트
+                imageview(); // 이미지를 업데이트하는 함수 호출
+            }
+        }
+
+        // 이미지를 표시하는 함수
+        function imageview() {
+            let s = `<table class="table table-bordered" style="width: 700px">`; // 이미지 테이블 시작
+            let idx = 0; // 이미지 순서를 추적하는 변수
+
+            s += `<tr height="100">`; // 이미지 행 시작
+
+            for (let i = 1; i <= 34; i++) {
+                idx++;
+                // 이미지 경로와 유형에 따라 이미지를 테이블에 추가
+                s += `<td align=center>
+                        <img src="../image/shop/${i}.${i == 24 ? 'gif' : 'jpg'}" width="90%">
+                      </td>`;
+
+                // 열의 마지막 이미지인 경우 행을 닫음
+                if (idx % col == 0 && i == 34)
+                    s += "</tr>";
+                // 열의 마지막 이미지가 아닌 경우 다음 행으로 이동
+                else if (idx % col == 0 && i < 34)
+                    s += "</tr><tr>";
+            }
+
+            // 선택한 열의 수로 나누어 떨어지지 않는 경우 부족한 이미지를 빈 셀로 채움
+            if (idx % col != 0) {
+                while (true) {
+                    idx++;
+                    s += `<td align=center valign=middle>
+                            <img src="../image/C8.png" width="60%">
+                          </td>`;
+                    if (idx % col == 0)
+                        break;
+                }
+                s += "</tr>";
+            }
+
+            s += "</table>"; // 이미지 테이블 종료
+
+            document.querySelector(".photo").innerHTML = s; // 결과를 .photo 클래스를 가진 요소에 출력
+        }
+    </script>
+</head>
+<body>
+    <div style="margin: 50px;">
+        <div class="input-group" style="width: 300px;">
+            <h4>이미지 열갯수 선택</h4>
+            &nbsp;&nbsp;
+            <select class="selcol form-select">
+                <!-- 드롭다운 메뉴에 열 수 옵션 생성 -->
+                <script>
+                    for (let i = 3; i <= 10; i++) {
+                        // 초기 선택값인 5를 가진 옵션에는 'selected' 속성 추가
+                        document.write(`<option ${i == 5 ? "selected" : ""}>${i}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="photo">
+            <!-- 이미지를 표시할 영역 -->
+        </div>
+    </div>
+</body>
+</html>
