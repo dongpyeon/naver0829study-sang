@@ -12,10 +12,66 @@
 	}
 </style>
 <script>
-
+	$(function(){
+		//attr: 속성값을 얻거나 속성값을 변경
+		//css: 스타일값을 얻거나 스타일값을 변경
+		//imga의 0번 이미지의 width, title변경
+		$("div.imga>img:eq(0)").attr("width","50").attr("title","sangchul");
+		//여러 속성을 한꺼번에 변경하려면
+		$("div.imga>img:eq(1)").attr({
+			"src":"../image/shop/30.jpg",
+			"width":"90",
+			"title":"崔美神"
+		})
+		//3번째 사진은 속성과 스타일을 동시에 변경
+		$("div.imga>img:eq(2)").attr("src","../image/shop/26.jpg").css("width","150px").css("border-radius","50px")
+		
+		//imga의 두번째 사진을 imgb의 첫번째에 넣기, width 스타일속성 추가해서 100px로 맞추기
+		//let a =$("div.imga>img:eq(1)").attr("src");
+		//$("div.imgb>img:eq(0)").attr("src",a);
+		//$("div.imgb>img:eq(0)").css("width","100px");
+		
+		//위의 3줄을 한줄로 줄여보자
+		$("div.imgb>img:eq(0)").attr("src",$("div.imga>img:eq(1)").attr("src")).css("width","100px");
+		
+		//imga의 3번째 사진을 imgb의 2번 이후에 모두 넣기
+		//let a =$("div.imga>img:eq(2)").attr("src");
+		//$("div.imgb>img:gt(0)").attr("src",a);
+		
+		$("div.imgb>img:gt(2)").attr("src",$("div.imga>img:eq(2)").attr("src"));
+		
+		
+		//imgb의 1번 인덱스에 shop의 28.jpg넣고 속성을 변경하는데 width, border,border-radius
+		$("div.imgb>img:eq(1)").attr("src","../image/shop/28.jpg");
+		$("div.imgb>img:eq(1)").css({
+			"width":"100px",
+			"border": "1px groove purple",
+			"border-radius": "20px 10px 200px 30px",
+		});
+		
+		//imgb의 2번 인덱스에 food의 11.jpg를 넣고 title을 망고빙수로 변경, with속성을 100으로 변경
+		$("div.imgb>img:eq(2)").attr({
+			"src":"../image/food/11.jpg",
+			"width":"50",
+			"title":"망고빙수"});
+	})
 </script>
 </head>
 <body>
-	
+	<div class="imga">
+		<img src="../image/C7.png" width="120" title="상철" border="2">
+		<img src="../image/C3.png" width="120" title="영숙">
+		<img src="../image/C6.png" style="width:120px" title="영자">
+		<img src="../image/C2.png" width="120" title="순자" style="border:2px solid pink">
+		<img src="../image/C1.png" width="120" title="옥순">
+	</div>
+	<div class="imgb">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+		<img src="">
+	</div>
 </body>
 </html>

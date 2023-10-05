@@ -51,7 +51,7 @@
 		$("div.diva>h3:first").css("font-family","Gamja Flower");
 		$("div.diva>h3:last").css("font-family","Lobster"); //마지막 태그만 변경
 		
-		$("div.divc").first().css("background-color","tomato");
+		$("div.divc").first().css("background-color","lime");
 		$("div.divc").last().css("background-color","gold");
 		
 		//gt(n):n번 이후에 적용(n번은 적용안됨),lt(n):n번 미만에만 적용(n번은 적용안됨)
@@ -65,6 +65,9 @@
 			"height":"100px",
 			"border":"3px double red"
 		});
+		
+		//css값을 얻어서 바로 적용시켜보자
+		$("div.divd>img:eq(1)").css("background-color",$("div.divc:eq(0)").css("background-color"))
 	});
 </script>
 </head>
