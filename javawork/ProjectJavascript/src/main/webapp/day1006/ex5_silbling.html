@@ -30,6 +30,9 @@
 			//부모의 형제들로 접근후 하위 태그 중 b 태그를 찾아서 제거하기
 			$(this).parent().siblings().find("b").remove();
 		});
+		 $("div.box").mouseleave(function(){
+              $(this).next("b").remove();
+    });
 	})
 </script>
 </head>

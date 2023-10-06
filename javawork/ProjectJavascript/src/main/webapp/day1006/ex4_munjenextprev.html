@@ -39,13 +39,13 @@
 			//별점 얻기
 			let star=$(this).next().next().find("span").text();
 			$("div.result>h3").text(star); 강사님 */
-			/*
+			/* 방법 2
 	         $('div.box').mousemove(function(){
     	        $('div.result').css('background-color',$(this).css('background-color'))
                 .find('h1').text($(this).next().text())
                 .next().text($(this).next().next().find('span').text())
 			*/
-			
+			//방법 3
 			$('div.box').mousemove(function(){
             	$('div.result').css('background-color', $(this).css('background-color'))
             	$('div.result').find('h1').text($(this).next().text())
