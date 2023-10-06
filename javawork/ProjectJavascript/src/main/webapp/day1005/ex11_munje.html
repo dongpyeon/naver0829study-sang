@@ -21,8 +21,8 @@
 	$(function(){
 		//문제1:h3바로 아래 b의 글꼴을 Dongle, 사이즈를 25px, 글자색을 red로 변경
 		$("h3>b").css({
-			"fontFamily":"Dongle",
-			"fontSize":"25px",
+			"font-family":"Dongle",
+			"font-size":"25px",
 			"color":"red"
 		})
 		//문제2:h3아래의 span 태그를 클릭하면 안의 텍스트를 읽어서 이미지 photo의 src에 넣기 -- 이벤트
@@ -31,6 +31,8 @@
 			let txt = $(this).text()
 			$("img").attr("src",txt);
 			$("h4>b").text(txt);
+			//$("img").attr("src",$(this).text()});
+			//$("h4>b").text($this.text());
 		})
 		
 		//문제3: photo라는 클래스로 스타일을 만든후(border 등 마음대로 추가)
@@ -63,6 +65,6 @@
 	<hr>
 	<img src="" width="200">
 	<br>
-	<h4><b>111</b></h4>
+	<h4><b>글자 변경 부분</b></h4>
 </body>
 </html>
