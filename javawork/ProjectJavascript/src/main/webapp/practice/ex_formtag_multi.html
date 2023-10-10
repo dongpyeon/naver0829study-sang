@@ -144,46 +144,45 @@
 						});
 					}
 			
-			$("input[name='fonts']:checked").click(function(){
-			let fonts = $(this).val();
-				$(".result").css("font-family",fonts);				
+			$(".fonts").click(function(){
+			let selfonts = $(this).val();
+				$(".result").css("font-family",selfonts);				
 			})	
 
-			$(".style1").click(function(){
-				let ck=$(this).is(":checked");
-				if(ck)
-					$(".result").css("font-weight","bold");
-				else
-					$(".result").css("font-weight","normal");
-			});
-			//기울게
-				$(".style2").click(function(){
-				let ck=$(this).is(":checked");
-					if(ck)
-						$(".result").css("font-style","italic");
-					else
-						$(".result").css("font-style","normal");
-				});
-	         $(".style3, .style4").click(function () {
-            
-            let st4 = $(this).attr('class') == "style3" ? $(".style4").is(":checked") : $(".style3").is(":checked");
-
+			$(".style1").click(function () {
             let ck = $(this).is(":checked");
-            
-            if (ck && st4)
-               $(".result").css("text-decoration", "line-through underline");
-            else if (ck && !st4)
-               $(".result").css("text-decoration", "underline");
-            else if (!ck && st4)
-               $(".result").css("text-decoration", "line-through");
+            if (ck)
+                $(".result").css("font-weight", "bold");
             else
-               $(".result").css("text-decoration", "none");
-         	});
+                $(".result").css("font-weight", "normal");
+        });
+
+        $(".style2").click(function () {
+            let ck = $(this).is(":checked");
+            if (ck)
+                $(".result").css("font-style", "italic");
+            else
+                $(".result").css("font-style", "normal");
+        });
+
+        $(".style3, .style4").click(function () {
+            let st4 = $(this).attr('class') == "style3" ? $(".style4").is(":checked") : $(".style3").is(":checked");
+            let ck = $(this).is(":checked");
+
+            if (ck && st4)
+                $(".result").css("text-decoration", "line-through underline");
+            else if (ck && !st4)
+                $(".result").css("text-decoration", "underline");
+            else if (!ck && st4)
+                $(".result").css("text-decoration", "line-through");
+            else
+                $(".result").css("text-decoration", "none");
+        });
          	
-			$("input[name='mycolor']:checked").change(function(){
-				let bg=$(this).val();
-				$(".result").css("color",bg);
-				})
+			$(".mycolor").change(function () {
+            let bg = $(this).val();
+            $(".result").css("color", bg);
+        })
 			$(".result").html(`
 							이름 : ${name}<br>
 							성별 : ${gender}<br>
