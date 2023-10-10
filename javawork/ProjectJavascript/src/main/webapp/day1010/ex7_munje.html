@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+	<h5 class="alert alert-info">이름, 성별, 자격증, 글자색 선택</h5>
+	<div class="input-group" style="width:200px">
+		<span class="input-group-text">이름</span>
+		<input type="text" class="form-control" id="fname" style="width: 70px;">
+	</div>
+	<div class="input-group" style="margin-top:10px">
+		<span class="input-group-gender">성별</span>
+		<lable>
+			<input type="radio" name="gender" style="margin-left:10px;" value="여자">여자
+		</lable>
+		<lable>
+			<input type="radio" name="gender" style="margin-left: 10px;" value="남자" checked>남자
+		</lable>
+	</div>
+	<div class="input-group" style="margin-top: 10px">
+		<span class="input-group-certificate">자격증</span>
+		&nbsp;&nbsp; 
+		<div>
+		<script>
+			let certi=["면허2종","정보처리기사"];
+			$.each(certi,function(idx,item){
+				let s=
+				`
+				<label>
+					<input type="checkbox" name="certi" value="${item}">${item}
+				</label><br>
+				`;
+				document.write(s);
+			})
+		</script>	
+		</div>
+	</div>
+	<div class="input-group">
+	<span class="input-group-fcolor">글자색</span>
+	&nbsp;&nbsp;&nbsp;
+	<label>
+		<input type="radio" name="bcolor" value="red">빨강
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="radio" name="bcolor" value="green">초록
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="radio" name="bcolor" value="blue">파랑
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="radio" name="bcolor" value="pink">핑크
+	</label>
+	</div>
+	<br>
+	<button type="button" id="btn1" class="btn btn-outline-success">결과 출력</button>
+	<br>
+	<div class="result"></div>
+	<script>
+		$("#btn1").click(function(){
+			let s="";
+			let name = $("#fname").val(); 
+			let gender = $("input[name='gender']:checked").val();
+			let certi_count = $("input[name='certi']:checked").length;
+				if(certi_count==0){
+					s+="자격증이 없습니다.<br>";					
+				}
+				else {
+					$("input[name='certi']:checked").each(function(idx){
+						s+=(idx+1)+"."+$(this).val()+"&nbsp;&nbsp;";	
+						});
+					}
+			let color = $("input[name='bcolor']:checked").val();
+			$(".result").css("color",color);
+			$(".result").html(`
+							이름 : ${name}<br>
+							성별 : ${gender}<br>
+							자격증 : ${s}
+							`);
+		})
+	</script>
+</body>
+</html>
