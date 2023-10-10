@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+	#btn1 {
+		margin-left: 600px;
+		
+	}
+	div.result {
+		margin-left: 600px;
+	}
+</style>
+<script>
+
+</script>
+</head>
+	<h4 class="alert alert-success">radio, checkbox, select기능 사용</h4>
+	<button type="button" id="btn1" class="btn btn-outline-success">결과 출력</button>
+	<br>
+	<div class="result"></div>
+	<br>
+	<div class="input-group" style="width:200px">
+		<span class="input-group-text">이름</span>
+		<input type="text" class="form-control" id="name" style="width: 70px">
+	</div>
+	<br>
+	<div class="input-group" style="width:400px">
+		<span class="input-group-text">성별</span>
+	<div class="input-group-text">
+		<label>
+			<input type="radio" name="gender" value="여" checked>여
+		</label>
+		&nbsp;&nbsp;
+		<label>
+			<input type="radio" name="gender" value="남">남
+		</label>
+		</div>
+	</div>
+	<br>
+	<h5>구현가능 언어</h5>
+	<div class="input-group" style="width: 400px; height:100px; border: 1px solid black">
+		<script>
+		let lang=["Java","JavaScript","Python","C","C#","C++","Typscript","ES6","Spring","Framework","Spring Boot","Git","Oracle","Linux","Mysql","JSP","ThymeLeft","Naver Cloud"]			
+		$.each(lang,function(idx,item){
+			let s =
+				`
+				<label>
+					<input type="checkbox" name="lang" value="${item}">${item}&nbsp;&nbsp;
+				</label>
+				`;
+				document.write(s);
+		})
+		</script>
+	</div>
+	<br>
+	<h5>자격증</h5>
+		<div class="input-group" style="width: 350px; height:100px; border: 1px solid black">
+		<script>
+		let cert=["정보처리기사","SQLD","HSK","TOEIC","네트워크관리","컴퓨터활용능력"]			
+		$.each(cert,function(idx,item){
+			let s =
+				`
+				<label>
+					<input type="checkbox" name="cert" value="${item}">${item}&nbsp;&nbsp;
+				</label>
+				`;
+				document.write(s);
+			})
+		</script>
+	</div>
+	<br> <!--글꼴-->
+	<h5>글꼴 선택</h5>
+		<div class="input-group" style="width: 200px">
+		<script>
+		let fonts=["Dongle","Jua","Lobster","Gamja Flower","Bagel Fat One"]			
+			let s =
+				`
+				<select class="form-select fonts" style="border: 1px solid black;">
+				`;
+				s+=`<option hidden disabled selected>글꼴을 선택하세요<option>`;
+				$.each(fonts,function(idx,item){
+					s+=`<option>${item}</option>`;
+				})
+				s+="</select>"				
+				document.write(s);
+		</script>
+	</div>
+	<br> <!--글꼴 스타일-->
+	<h5>글꼴 스타일을 선택하세요</h5>
+	<div style="border: 1px dotted black; width: 100px;">
+	<label>
+		<input type="checkbox" class="style1">굵게
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="checkbox" class="style2">기울게
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="checkbox" class="style3">밑줄
+	</label>
+	&nbsp;&nbsp;
+	<label>
+		<input type="checkbox" class="style4">취소선
+	</label>
+	</div>
+	<br> <!--글꼴 색상-->
+	<h5>글꼴 색상 선택</h5>
+	<div style="width: 80px;">
+		<input type="color" class="mycolor form-control" value="#ccffcc">
+	</div>
+	<!--이벤트-->
+		<script>
+		$("#btn1").click(function(){
+			let s="";
+			let cert="";
+			let lang="";
+			let name = $("#name").val(); 
+			let gender = $("input[name='gender']:checked").val();
+			let lang_count = $("input[name='lang']:checked").length;
+				if(lang_count==0){
+					lang+="자격증이 없습니다.<br>";					
+				}
+				else {
+					$("input[name='lang']:checked").each(function(idx){
+						lang+=(idx+1)+"."+$(this).val()+"&nbsp;&nbsp;";	
+						});
+					}
+			let cert_count = $("input[name='cert']:checked").length;
+				if(cert_count==0){
+					cert+="자격증이 없습니다.<br>";					
+				}
+				else {
+					$("input[name='cert']:checked").each(function(idx){
+						cert+=(idx+1)+"."+$(this).val()+"&nbsp;&nbsp;";	
+						});
+					}
+			
+			$("input[name='fonts']:checked").click(function(){
+			let fonts = $(this).val();
+				$(".result").css("font-family",fonts);				
+			})	
+
+			$(".style1").click(function(){
+				let ck=$(this).is(":checked");
+				if(ck)
+					$(".result").css("font-weight","bold");
+				else
+					$(".result").css("font-weight","normal");
+			});
+			//기울게
+				$(".style2").click(function(){
+				let ck=$(this).is(":checked");
+					if(ck)
+						$(".result").css("font-style","italic");
+					else
+						$(".result").css("font-style","normal");
+				});
+	         $(".style3, .style4").click(function () {
+            
+            let st4 = $(this).attr('class') == "style3" ? $(".style4").is(":checked") : $(".style3").is(":checked");
+
+            let ck = $(this).is(":checked");
+            
+            if (ck && st4)
+               $(".result").css("text-decoration", "line-through underline");
+            else if (ck && !st4)
+               $(".result").css("text-decoration", "underline");
+            else if (!ck && st4)
+               $(".result").css("text-decoration", "line-through");
+            else
+               $(".result").css("text-decoration", "none");
+         	});
+         	
+			$("input[name='mycolor']:checked").change(function(){
+				let bg=$(this).val();
+				$(".result").css("color",bg);
+				})
+			$(".result").html(`
+							이름 : ${name}<br>
+							성별 : ${gender}<br>
+							구현가능 언어 : ${lang}<br>
+							자격증 : ${cert}<br>
+							`);
+			});
+		</script>
+</body>
+</html>
