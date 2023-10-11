@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <style>
 	body * {
@@ -16,6 +17,17 @@
 		height: 50px;
 		border:1px solid black;
 		background-color: palevioletred;
+	}
+	#two{
+		width: 150px;
+		font-size: 15px;
+		border: 1px double orange;
+	}
+	.heart{
+		color:red;
+		font-size: 20px;
+		position: relative;
+		cursor: pointer;
 	}
 </style>
 <script>
@@ -38,11 +50,41 @@
 			$("#one").animate({left:'+=100px'},'fast');
 		});
 		$("#btn2").click(function(){
-			$("img").animate({width:'+=10px',borderWidth:'+=10px'},1000);
+			$("img").animate({width:'+=10px',borderWidth:'+=3px'},1000);
 			$("#one").animate({width:'+=20px'},1000).animate({top:'+=30px',left:'+=30px'},'slow');
 		})
 		$("#btn3").click(function(){
-			
+			$("img").animate({width:'200px',height:'200px',opacity:'0.5'},2000,function(){
+				$(this).css({
+					width:'100px',
+					heigth:'110px',
+					opacity:1
+				});
+				$(this).after("<h5>이미지 애니메이트 끝!!</h5>")
+			});
+		});
+	</script>
+	<hr>
+	<div id="two">Happy Day!</div>
+	<br>
+	<button type="button" id="btn4" class="btn btn-danger">Box 애니메이트</button>
+	<script>
+		$("#btn4").click(function(){
+			$("#two").animate({width:'500px',fontSize:'40px',borderWidth:'10px'},2000);
+		})
+	</script>
+	<hr>
+	<i class="bi bi-pencil-fill" style="font-size: 50px; color:teal"></i>
+	<br><br>
+	<i class="bi bi-heart-fill heart"></i>
+	<script>
+		$(".heart").click(function(){
+			$(this).animate({fontSize:"70px",left:"200px"},1000,function(){
+				$(this).css({
+					fontSize: "20px",
+					left: "0px"
+				});
+			})
 		})
 	</script>
 </body>

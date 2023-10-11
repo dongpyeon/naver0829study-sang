@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+</style>
+<script>
+	$(function(){
+		//제목 부분
+		$(".title>b").css({
+			"cursor":"pointer",
+			"font-size":"22px"
+		});
+		
+		//내용은 일단 안보이게 처리
+		$("div.content").hide();
+		
+		//제목을 클릭시 해당 기사가 slide down 효과로 내려오게 한다.
+		$(".title>b").click(function(){
+			$(this).next().slideDown('slow');
+			
+			//나머지는 내용이 닫히도록 한다.
+			$(this).parent().siblings().find("div.content").slideUp('slow');
+		})
+	});
+</script>
+</head>
+<body>
+	<div class="title alert alert-danger">
+		<b>Java:</b>
+		<div class="content">
+			 자바는 객체지향 프로그래밍 언어로, 크로스 플랫폼 애플리케이션 개발에 사용됩니다.
+		</div>
+	</div>
+	<div class="title alert alert-info">
+		<b>JavaScript: </b>
+		<div class="content">
+			자바스크립트는 웹 개발을 위한 스크립트 언어로, 웹 페이지 상에서 동적 기능을 제공하며, 클라이언트 측 웹 개발에 사용됩니다.
+		</div>
+	</div>
+	<div class="title alert alert-warning">
+		<b>Python:</b>
+		<div class="content">
+			 파이썬은 다목적 프로그래밍 언어로, 쉽고 가독성이 좋으며 다양한 분야에서 사용되며, 머신 러닝 및 데이터 분석과 같은 분야에서도 인기가 있습니다.
+		</div>
+	</div>
+</body>
+</html>
