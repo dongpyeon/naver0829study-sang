@@ -1,7 +1,7 @@
 $(function(){
 	//h1.title을 클릭시 .music-list를 slide down 한다.
 	$("h1.title").click(function(){
-		$("ul.music-list").slideDown("slow");
+		$("ul.music-list").slideToggle("slow");
 	});
 	//노래 제목을 클릭시 클릭한 곳의 제목을 얻어서 h1.title에 넣은 후 slideup한다.
 	$("ul.music-list li").click(function(){

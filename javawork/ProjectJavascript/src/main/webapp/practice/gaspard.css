@@ -12,7 +12,7 @@ li{
 	list-style: none;
 }
 
-.album{
+.character-all{
 	overflow: hidden;
 	width: 1100px;
 	height: 600px;
@@ -23,29 +23,23 @@ li{
 	margin-top: -300px;
 }
 
-.album .cover{
-	float: left;
-	position: relative;
-	z-index: 10;
-}
 
-#cd{
-	float: left;
-	width: 300px;
+.all{
+	float: bottom;
+	width: 700px;
 	height: 500px;
 	position: relative;
-	left: -60px;
-	top: 45px;
-	background-image: url('../jquery/cd-sprite.png');
-	background-position: right top;
+	margin-left:50px;
+	margin-top:300px;
+	
 }
 
-/*나중에 cd를 변경할 경우 대비해서 만들어놓는 css */
+/*나중에 cd를 변경할 경우 대비해서 만들어놓는 css 
 #cd.music1{background-position: right top;}
 #cd.music2{background-position: right center;}
-#cd.music3{background-position: right bottom;}
+#cd.music3{background-position: right bottom;}*/
 
-.select-music{
+.select-character{
 	cursor: pointer;
 	width: 540px;
 	position: relative;
@@ -54,10 +48,8 @@ li{
 	z-index:100; /*맨위로 나오게 함:숫자가 10보다 크면됨*/
 }
 
-.select-music h1.title{
+.select-character h1.title{
 	background-color: #fff;
-	background-image: url('../jquery/play.png');
-	background-repeat: no-repeat; /*사진 한장만 나오게한다*/
 	height: 40px;
 	line-height: 40px;
 	color: #f60;
@@ -65,7 +57,7 @@ li{
 	font-size: 25px;
 }
 
-.select-music .music-list li{
+.select-character .character-list li{
 	height: 40px;
 	line-height: 40px;
 	color: #666;
@@ -74,11 +66,11 @@ li{
 	background-color: rgba(0,0,0,0.8);
 }
 
-.select-music .music-list li:hover{
+.select-character .character-list li:hover{
 	background-color: #f60;
 	color:#fff;
 }
 
-.select-music .music-list{
+.select-character .character-list{
 	display:none;
 }
