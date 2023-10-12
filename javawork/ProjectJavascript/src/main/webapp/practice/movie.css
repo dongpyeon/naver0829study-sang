@@ -1,0 +1,36 @@
+div{
+	position: absolute;
+	width: 900px;
+	height: 150px;
+}
+	#one{left:50px;top:100px;}
+	#two{left:200px;top:100px; background-color:purple;}
+	#three{left:600px;top: 100px; background-color:gray;}	
+	#four{left:900px;top: 100px; background-color:yellow;}
+	#result{
+		left:100px; font-size: 2em; text-align: center;
+		width: 1000px; top:400px;
+		border: 3px solid gold;
+		border-radius: 30px;
+		padding-top: 20px;
+		visibility: hidden;
+	}
+	#three h3:hover{
+		cursor: pointer;
+		background-color: orange;
+	}
+	
+	button{
+		width: 120px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 20px;
+		font-size: 20px;
+		font-family: 'Dongle';
+		cursor: pointer;
+	}
+	
+	button.a{background-color:#2e8b57; color:#fff;}	
+	button.b{background-color:darkslateblue; color:#fff;}	
+	
+	

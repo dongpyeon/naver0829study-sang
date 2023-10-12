@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gamja+Flower&family=Jua&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link rel="stylesheet" href="./backgroundchange.css">
+<style>
+	body * {
+		font-family: 'Jua';
+	}
+</style>
+<script>
+	$(function(){
+		$(document).on("click","ul.list img",function(){
+			//현재 클릭한 이미지에 active클래스 추가
+			$(this).addClass("active");
+			let title = $(this).attr("title") //리스트의 타이틀을 값으로 받아놓기
+			$("h1.title").text(title); //리스트의 타이틀을 select부분에 넣는다.
+			//사진을 받아오자
+			let bimage=$(this).attr("src");
+			//console.log(bimage);
+			//사진을 배경으로 넣보자 background-image로 넣어야한다.
+			//사진 자체를 가져오려면 url형식으로 넣주어야 한다.
+			let url = "url("+bimage+")";
+			//console.log("url:"+url)
+			$(".wall").css("background-image",url);
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="wall">
+		<h1 class="title">Select Background</h1>
+		<img src="../jquery/redheart.png">
+		<ul class="list">
+			<li><img src="../jquery/b01.png" title="Pear"></li>
+			<li><img src="../jquery/b02.png" title="Checker"></li>
+			<li><img src="../jquery/b03.png" title="Bamboo"></li>
+			<li><img src="../jquery/b04.png" title="School"></li>
+			<li><img src="../jquery/b05.png" title="Leap"></li>
+			<li><img src="../jquery/b06.png" title="Forest"></li>			
+		</ul>
+	</div>
+</body>
+</html>
