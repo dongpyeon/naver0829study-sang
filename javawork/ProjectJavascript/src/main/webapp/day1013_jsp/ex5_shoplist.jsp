@@ -49,8 +49,13 @@
 			<tr>
 				<td><%=++n %></td>
 				<td><%=dto.getSangpum() %></td>
-				<td><img src="<%= "../image/shop/" + dto.getPhoto() + ".jpg" %>" width="100" height="100"></td>
-				<td style="color: <%= dto.getColor() %>"><%=dto.getColor() %></td>
+				<td><%=dto.getPrice() %><td>
+				<td align=center>
+					<img class="photo" src="../shop/<%=dto.getPhoto()%>.jpg">
+				</td>
+				<td align=center>
+					<div class="box" style="background-color: <%=dto.getColor()%>"></div>
+				</td>
 			</tr>
 		<%}
 	%>

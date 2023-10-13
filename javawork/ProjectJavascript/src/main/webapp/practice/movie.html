@@ -74,10 +74,11 @@
 		})
 		
 		//테이블에서 td클릭시 행,열값을 얻어서 메세지 출력
-		$(document).on("click","#four table.ticket td", function(){
+		$(document).on("click","table.ticket td", function(){
 			let row = $(this).attr("row");
 			let col = $(this).attr("col");
-			$("#result").append(`<br>${col} 행 ${row} 열 좌석을 예약했습니다.`);
+			let msg = `${col} 행 ${row} 열 좌석을 예약했습니다.`;
+			$("#result").html(+"<br>"+msg)
 		})
 	})
 </script>

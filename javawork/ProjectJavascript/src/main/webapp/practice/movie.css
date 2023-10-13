@@ -1,46 +1,74 @@
-div{
+div {
 	position: absolute;
-	width: 800px;
+	width: 600px;
 	height: 150px;
 }
-#one{left:50px;top:100px;}
-#two{left:200px;top:100px;}
-#three{left:600px;top: 100px;}	
-#four{left:900px;top: 100px;}
-#result{
-		left:100px; font-size: 2em; text-align: center;
-		width: 1000px; height: 800px; top:400px;
-		border: 3px solid gold;
-		border-radius: 30px;
-		padding-top: 20px;
-		visibility: hidden;
-	}
-	#three h3:hover{
-		cursor: pointer;
-		background-color: orange;
-	}
-	
-	button{
-		width: 120px;
-		height: 40px;
-		line-height: 40px;
-		border-radius: 20px;
-		font-size: 20px;
-		font-family: 'Dongle';
-		cursor: pointer;
-	}
-	
-	button.a{background-color:#2e8b57; color:#fff;}	
-	button.b{background-color:darkslateblue; color:#fff;}	
-	
-	#four table.ticket{
-		border:10px groove gray;
-		width: 400px;
-		height: 300px;
-	}
-	
-	#four table.ticket td:hover{
-		background-color: pink;
-		cursor: pointer;
-	}
-	
+
+#one {
+	left: 50px;
+	top: 100px;
+}
+
+#two {
+	left: 200px;
+	top: 100px;
+}
+
+#three {
+	left: 600px;
+	top: 100px;
+}
+
+#four {
+	left: 900px;
+	top: 100px;
+}
+
+#result {
+	left: 100px;
+	font-size: 2em;
+	text-align: center;
+	width: 600px;
+	height: 200px;
+	top: 400px;
+	border: 3px solid gold;
+	border-radius: 30px;
+	padding-top: 20px;
+	visibility: hidden;
+}
+
+#three h3:hover {
+	cursor: pointer;
+	background-color: orange;
+}
+
+button {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	font-size: 20px;
+	font-family: 'Dongle';
+	cursor: pointer;
+}
+
+button.a {
+	background-color: #2e8b57;
+	color: #fff;
+}
+
+button.b {
+	background-color: darkslateblue;
+	color: #fff;
+}
+
+#four table.ticket {
+	border: 10px groove gray;
+	width: 400px;
+	height: 300px;
+}
+
+table.ticket td:hover {
+	background-color: pink;
+	cursor: pointer;
+}
