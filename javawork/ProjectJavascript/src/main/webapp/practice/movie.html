@@ -51,9 +51,34 @@
 		
 		//버튼2 or 버튼3을 클릭해서 값을 얻기
 		$(document).on("click","#three h3", function(){
-			
+			let select = $(this).attr("class");
+			if(select=='theater')
+				theater="극장명 : "+$(this).text();
+			else
+				movie="영화제목 : "+$(this).text();
+			$("#result").html(theater+"<br>"+movie)
+		});
+		
+		//좌석 선택 테이블 만들기
+		$(document).on("click", "#btn4", function(){
+			let s = `<table class="table table-bordered ticket">`;
+				for(let row=1; row<=5; row++){
+					s+="<tr>";
+					for(let col=1; col<=5; col++){
+						s+=`<td row="${row}" col="${col}"></td>`;
+					}
+					s+="</tr>"
+				}
+				s+="</table>"
+				$("#four").html(s);
 		})
-			
+		
+		//테이블에서 td클릭시 행,열값을 얻어서 메세지 출력
+		$(document).on("click","#four table.ticket td", function(){
+			let row = $(this).attr("row");
+			let col = $(this).attr("col");
+			$("#result").append(`<br>${col} 행 ${row} 열 좌석을 예약했습니다.`);
+		})
 	})
 </script>
 </head>
@@ -61,7 +86,7 @@
 	<div id="one"></div>
 	<div id="two"></div>
 	<div id="three"></div>
-	<div id="four">4</div>
-	<div id="result">5</div>
+	<div id="four"></div>
+	<div id="result"></div>
 </body>
 </html>
