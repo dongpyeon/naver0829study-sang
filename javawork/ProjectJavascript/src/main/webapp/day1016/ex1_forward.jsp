@@ -1,6 +1,6 @@
-<%@page import="java.util.List"%>
 <%@page import="java.util.Vector"%>
 <%@page import="data.ShopDto"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,50 +15,31 @@
 	body * {
 		font-family: 'Jua';
 	}
-	div.box{
-		width: 50px;
-		height: 50px;
-		border: 1px solid black;
-	}
 </style>
 <script>
 
 </script>
 </head>
 <body>
+<!-- 
+	jsp에서 페이지 이동하는 방법 
+	1. forwards : url주소 안바뀜, request, response등이 그대로 전달됨
+	2. redirect : url주소 바뀜, request, response 등이 새로 생성되므로 전달 안됨
+-->
+<h3>forward를 이용해서 페이지 이동하기</h3>
 <%
-	List<ShopDto> list=new Vector<>();
+	//request에 데이터를 저장해보자
+	String msg="Happy Day!!!";
+	List<ShopDto> list = new Vector<>();
 	list.add(new ShopDto("플렛슈즈","14",23000,"green"));
 	list.add(new ShopDto("머리끈","26",8000,"yellow"));
 	list.add(new ShopDto("보석머리띠","30",15000,"purple"));
 	list.add(new ShopDto("뿌띠스카프","10",59000,"magenta"));
 	list.add(new ShopDto("화이트자켓","31",23000,"white"));
+	
+	request.setAttribute("msg", msg);
+	request.setAttribute("list", list);	
 %>
-<table class="table table-bordered" style="width:500px;">
-	<tr>
-		<th width=50>번호</th>
-		<th width=150>상품명</th>
-		<th width=100>가격</th>
-		<th width=140>사진</th>	
-		<th>색상</th>			
-	</tr>
-	<%
-		int n=0;
-		for(ShopDto dto:list)
-		{%>
-			<tr>
-				<td><%=++n%></td>
-				<td><%=dto.getSangpum() %></td>
-				<td><%=dto.getPrice() %>원</td>
-				<td align=center>
-					<img class="photo" src=".../image/shop/<%=dto.getPhoto()%>.jpg">
-				</td>
-				<td align=center>
-					<div class="box" style="background-color: <%=dto.getColor()%>"></div>
-				</td>
-			</tr>
-		<%}	
-	%>
-</table>
+<jsp:forward page="ex2_forward.jsp"/>
 </body>
 </html>
