@@ -9,7 +9,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-
+gaspard/
 # External tool builders
 .externalToolBuilders/
 

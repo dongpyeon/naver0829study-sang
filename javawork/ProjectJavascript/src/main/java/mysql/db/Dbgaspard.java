@@ -6,16 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DbConnect {
-	static final String MYSQL_DRIVER="com.mysql.cj.jdbc.Driver";
-	static final String MYSQL_URL="jdbc:mysql://localhost:3306/bit701?serverTimezone=Asia/Seoul";
-	
-	public DbConnect() {
+public class Dbgaspard {
+	static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
+	static final String MYSQL_URL = "jdbc:mysql://localhost:3306/bit701?serverTimezone=Asia/Seoul";
+
+	public Dbgaspard() {
 		// TODO Auto-generated constructor stub
 		try {
 			Class.forName(MYSQL_DRIVER);
 		} catch (ClassNotFoundException e) {
-			System.out.println("Mysql 드라이버 오류:"+e.getMessage());
+			System.out.println("Msql 드라이버 오류" + e.getMessage());
 		}
 	}
 	
@@ -52,4 +52,5 @@ public class DbConnect {
 			e.printStackTrace();
 		}
 	}
+
 }

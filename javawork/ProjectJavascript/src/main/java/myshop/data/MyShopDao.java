@@ -10,22 +10,21 @@ import java.util.Vector;
 import mysql.db.DbConnect;
 
 public class MyShopDao {
-	DbConnect db = new DbConnect();
+	DbConnect db=new DbConnect();
+
 	//전체 출력
 	public List<MyShopDto> getAllSangpums()
 	{
-		List<MyShopDto> list = new Vector<MyShopDto>();
-		Connection conn = db.getConnection();
+		List<MyShopDto> list=new Vector<MyShopDto>();
+		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String sql = """
-				SELECT *
-				FROM myshop ORDER BY num;
-				""";
+		String sql="select * from myshop order by num";
+
 		try {
-			pstmt = conn.prepareStatement(sql);
-			rs=pstmt.executeQuery(); //반드시 가져와야한다.
-			
+			pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+
 			while(rs.next())
 			{
 				MyShopDto dto=new MyShopDto();//반드시 while문 안에 선언
@@ -35,41 +34,128 @@ public class MyShopDao {
 				dto.setPhoto(rs.getString("photo"));
 				dto.setColor(rs.getString("color"));
 				dto.setWriteday(rs.getTimestamp("writeday"));
-				//list에 추가
+				//list 에 추가
 				list.add(dto);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			db.dbCloase(rs, pstmt, conn);
+			db.dbClose(rs, pstmt, conn);
 		}
+
 		return list;
 	}
-	
+
 	//insert
 	public void insertShop(MyShopDto dto)
 	{
-		String sql="""
-					INSERT INTO myshop
-					(sangpum,color,price,photo,writeday) 
-					values(?,?,?,?,now))
-					""";
+		String sql="insert into myshop (sangpum,color,price,photo,writeday) values (?,?,?,?,now())";
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
+
 		try {
 			pstmt=conn.prepareStatement(sql);
 			//바인딩
 			pstmt.setString(1, dto.getSangpum());
-			pstmt.setInt(2, dto.getPrice());
-			pstmt.setString(3, dto.getPhoto());
-			pstmt.setString(4, dto.getColor());
+			pstmt.setString(2, dto.getColor());
+			pstmt.setInt(3, dto.getPrice());
+			pstmt.setString(4, dto.getPhoto());
 			//실행
 			pstmt.execute();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}finally {
-				db.dbCloase(pstmt, conn);
-			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
 		}
+	}
+
+	//delete
+	public void deleteShop(String num)
+	{
+		String sql="delete from myshop where num=?";
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, num);
+			//실행
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+
+	//num 에 해당하는 dto반환
+	public MyShopDto getSangpum(String num)
+	{
+		MyShopDto dto=new MyShopDto();
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from myshop where num=?";
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, num);
+			//실행
+			rs=pstmt.executeQuery();
+
+			if(rs.next())
+			{				
+				dto.setNum(rs.getInt("num"));
+				dto.setSangpum(rs.getString("sangpum"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPhoto(rs.getString("photo"));
+				dto.setColor(rs.getString("color"));
+				dto.setWriteday(rs.getTimestamp("writeday"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return dto;
+	}
+	
+	
+	public void updateShop (MyShopDto dto)
+	{
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt=null;
+		String sql = """
+				UPDATE myshop
+				 SET sangpum=?,
+				 	 price=?,
+				 	 photo=?,
+				 	 color=?
+				 WHERE num=?
+				""";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1,dto.getSangpum());
+			pstmt.setInt(2,dto.getPrice());
+			pstmt.setString(3,dto.getPhoto());
+			pstmt.setString(4, dto.getColor());
+			pstmt.setInt(5, dto.getNum());
+			
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+
 }
