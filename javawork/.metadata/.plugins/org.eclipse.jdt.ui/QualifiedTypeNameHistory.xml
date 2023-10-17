@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="bit701.day0922.Ex2_MysqlJdbc"/>
-    <fullyQualifiedTypeName name="bit701.day0922.Ex3_MysqlGroupSawon"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex1_OracelShopInsert"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="oracle.jdbc.driver.DBConversion"/>
@@ -46,18 +44,20 @@
     <fullyQualifiedTypeName name="afterclass.Ex_PracticeSwing"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="myshop.data.MyShopDto"/>
     <fullyQualifiedTypeName name="myshop.data.MyShopDao"/>
     <fullyQualifiedTypeName name="java.sql.Time"/>
-    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="mysql.db.Dbgaspard"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="simpleboarddata.SimpleBoardDto"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.AbandonedConnectionCleanupThread"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="mygaspard.MygaspardDto"/>
 </qualifiedTypeNameHistroy>
