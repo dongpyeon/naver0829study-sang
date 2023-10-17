@@ -127,7 +127,7 @@ public class MyShopDao {
 		return dto;
 	}
 	
-	
+	//update
 	public void updateShop (MyShopDto dto)
 	{
 		Connection conn = db.getConnection();

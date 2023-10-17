@@ -29,5 +29,5 @@
 	dao.updateShop(dto);
 	
 	//myshop.jsp로 리다이렉트로 이동
-	response.sendRedirect("myshop.jsp");
+	response.sendRedirect("myshopdetail.jsp");
 %>
