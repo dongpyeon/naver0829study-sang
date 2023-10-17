@@ -28,6 +28,6 @@
 	//update메서드 호출
 	dao.updateShop(dto);
 	
-	//myshop.jsp로 리다이렉트로 이동
-	response.sendRedirect("myshopdetail.jsp");
+	//myshop.jsp로 리다이렉트로 이동 detail로 갈때는 아래와 같이 넣어주어야 한다. (바뀐번호대로 이동)
+	response.sendRedirect("myshopdetail.jsp?num="+num);
 %>
