@@ -23,7 +23,7 @@ public class MygaspardDao {
 		String sql = """
 				SELECT *
 				 FROM gaspard
-				 ORDER BY num
+				 ORDER BY num desc
 				""";
 		
 		try {
@@ -189,4 +189,28 @@ public class MygaspardDao {
 		}
 	}
 	//delete
+	public void deletegaspard(String num) {
+		String sql=
+				"""
+				DELETE FROM gaspard
+				WHERE num=?
+				""";
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, num);
+			
+			//실행
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+
 }
