@@ -57,7 +57,7 @@
     <fullyQualifiedTypeName name="simpleboarddata.SimpleBoardDto"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.AbandonedConnectionCleanupThread"/>
+    <fullyQualifiedTypeName name="mygaspard.MygaspardDto"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="mygaspard.MygaspardDto"/>
 </qualifiedTypeNameHistroy>

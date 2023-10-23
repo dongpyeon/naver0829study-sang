@@ -149,21 +149,22 @@ public class MygaspardDao {
 			sql = """
 					UPDATE gaspard
 					 SET
-					 gname=?,
-					 phone=?,
-					 addr=?,
-					 photo=?
-					WHERE num =?
+					 gname = ?,
+					 gender = ?,
+					 phone = ?,
+					 addr = ?
+					WHERE num = ?
 				""";		
 		}else {
 			//사진을 수정하는 경우
 			sql = """
 					UPDATE gaspard
 					 SET
-					 gname=?,
+					 gname = ?,
+					 gender = ?,
 					 phone=?,
 					 addr=?,
-					 photo="#1"
+					 photo='#1'
 					WHERE num =?
 				""".replace("#1",dto.getPhoto());
 		}
@@ -175,10 +176,11 @@ public class MygaspardDao {
 			pstmt=conn.prepareStatement(sql);
 			
 			pstmt.setString(1, dto.getGname());
-			pstmt.setString(2, dto.getPhone());
-			pstmt.setString(3, dto.getAddr());
-			pstmt.setString(4, dto.getPhoto());
-			pstmt.setString(5, dto.getNum());
+			pstmt.setString(2,dto.getGender());
+			pstmt.setString(3, dto.getPhone());
+			pstmt.setString(4, dto.getAddr());
+			pstmt.setString(5, dto.getPhoto());
+			pstmt.setString(6, dto.getNum());
 
 			pstmt.execute();
 		} catch (SQLException e) {

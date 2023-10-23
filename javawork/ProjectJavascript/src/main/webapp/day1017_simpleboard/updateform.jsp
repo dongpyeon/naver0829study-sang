@@ -73,7 +73,7 @@ $(function(){
 				<tr>
 					<th width="100">작성자</th>
 					<td>
-						<input tyep="text" name="writer" class="form-control"
+						<input type="text" name="writer" class="form-control"
 						 style="width: 150px" autofocus="autofocus" required="required" 
 						 value="<%=dto.getWriter() %>">
 					</td>
