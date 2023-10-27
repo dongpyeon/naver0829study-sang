@@ -164,7 +164,7 @@ public class MygaspardDao {
 					 gender = ?,
 					 phone=?,
 					 addr=?,
-					 photo='#1'
+					 photo="#1"
 					WHERE num =?
 				""".replace("#1",dto.getPhoto());
 		}
@@ -179,8 +179,7 @@ public class MygaspardDao {
 			pstmt.setString(2,dto.getGender());
 			pstmt.setString(3, dto.getPhone());
 			pstmt.setString(4, dto.getAddr());
-			pstmt.setString(5, dto.getPhoto());
-			pstmt.setString(6, dto.getNum());
+			pstmt.setString(5, dto.getNum());
 
 			pstmt.execute();
 		} catch (SQLException e) {
