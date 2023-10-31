@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex1_OracelShopInsert"/>
-    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
-    <fullyQualifiedTypeName name="oracle.jdbc.driver.DBConversion"/>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex2_MysqlSawonInsert"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex3_OracleShopDelete"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex4_MysqlSawonDelete"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex5_OracleShopUpdate"/>
@@ -45,19 +41,23 @@
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="myshop.data.MyShopDto"/>
     <fullyQualifiedTypeName name="myshop.data.MyShopDao"/>
     <fullyQualifiedTypeName name="java.sql.Time"/>
-    <fullyQualifiedTypeName name="mysql.db.Dbgaspard"/>
-    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="simpleboarddata.SimpleBoardDto"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.AbandonedConnectionCleanupThread"/>
     <fullyQualifiedTypeName name="mygaspard.MygaspardDto"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
+    <fullyQualifiedTypeName name="simpleboarddata.AnswerBoardDao"/>
+    <fullyQualifiedTypeName name="simpleboarddata.AnswerBoardDto"/>
+    <fullyQualifiedTypeName name="mysql.db.Dbgaspard"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="mygaspard.GaspardReplyDto"/>
+    <fullyQualifiedTypeName name="mygaspard.GaspardBoardDto"/>
 </qualifiedTypeNameHistroy>

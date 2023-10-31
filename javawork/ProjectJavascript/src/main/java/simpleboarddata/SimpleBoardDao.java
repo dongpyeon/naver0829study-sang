@@ -103,8 +103,8 @@ public class SimpleBoardDao {
 	      
 	      String sql = """
 	                  SELECT *
-	                    FROM SIMPLEBOARD
-	                   WHERE NUM = ?
+	                    FROM simpleboard
+	                   WHERE num = ?
 	                """;
 	      
 	      SimpleBoardDto dto = new SimpleBoardDto();
