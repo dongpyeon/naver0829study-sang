@@ -8,26 +8,27 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <style>
-	body * {
-		font-family: 'Jua';
-	}
-	
-	div.myboardicon{
-		margin: 30px 100px;
-	}
-	
-	div.myboardicon *{
-		cursor: pointer;
-		margin-right: 30px;
-		font-size: 30px;
-	}
-	    div.list{
+    body * {
+        font-family: 'Jua';
+    }
+    
+    div.simpleicon{
+    	margin: 30px 100px;
+    }
+    
+    div.simpleicon *{
+    	cursor: pointer;
+    	margin-right:30px;
+    	font-size:30px;
+    }
+    
+    div.list{
     	margin: 30px 50px;
     }
     
     div.box{
-    	width:150px;
-    	height: 240px;
+    	width:200px;
+    	height: 270px;
     	text-align: center;
     	border:5px solid gray;
     	border-radius: 20px;
@@ -37,10 +38,10 @@
     }
     
     div.box figure img{
-    	width:130px;
-    	height: 140px;
+    	width:160px;
+    	height: 160px;
     	border-radius: 30px;
-    	margin-top: 5px;
+    	margin-top:5px;
     }
     
     .day{
@@ -48,6 +49,10 @@
     	font-size:0.8em;
     	margin-right:20px;
     }
+    
+    div.content{
+		display: none;	
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -66,6 +71,13 @@
 		$(".myboardgrid").css("color","black")
 		list();
 		});
+		//list의 제목 클릭시 해당 내용만 나오게 하기
+		$(document).on("click", "b.subject",function(){
+			$("div.content").hide();
+			
+			//접었다 폈다
+			$(this).parent().next().slideDown('fast');
+		})
  	});
 
 	function grid()
@@ -77,30 +89,37 @@
 			success:function(res){
 				let s="";
 				$.each(res,function(idx,item){
-					if(item.photo !== "no")
-					{
-					s+="<div class='box'>";
-					s+="<figure>"
-					s+="<img src='../save/" + item.photo + "'>";
-					s+="<figcaption>";
-					s+="<span>"+"작성자:"+ item.writer+"</span><br>";
-					s+="<span>"+"조회수:"+item.readcount+"&nbsp;&nbsp;"+"<span><br>";
-					s+="<span class='day'>"+item.writeday+"<span>";
-					s+="</figcaption></figure></div>";									
-					}	
-		    });
+					if(item.photo!='no'){
+						s+=
+							`
+							<div class="box" style="background-color:#fcc;">
+								<figure>
+									<img src="../save/${item.photo}">
+									<figcaption>
+										<b>${item.subject}</b><br>
+										<span style="color:gray;">${item.writer}</span>
+										<br>
+										<span class="day">${item.writeday}
+											&nbsp;&nbsp;&nbsp;
+										조회 ${item.readcount}</span>
+									</figcaption>
+								</figure>
+							</div>
+							`;
+					}
+				});
 				$(".list").html(s);
-			},
+		    },
 			statusCode:{
 				404:function(){
 					alert("json 파일을 찾을수 없어요!");
 				},
 				500:function(){
 				   alert("서버 오류..코드를 다시한버너 보세요");
-				   }
-				 }	
-			});
-		}
+				}
+			}
+		});
+	}
 
 	function list()
 	{
@@ -113,32 +132,29 @@
 				s+=
 				`
 				<table class="table table-bordered" style="width:900px">
-					<thead>
-						<tr>
-							<th width=50>번호</th>
-							<th width=200>제목</th>
-							<th width=100>작성자</th>
-							<th width=150>작성일</th>
-							<th width=60>조회수</th>
-						</tr>
-					</thead>
-					<tbody>
-				`;
-				//반복문으로 데이터 읽기
+					`;
+
 				$.each(res,function(idx,item){			
-					s+=	"<tr>";
-					s+="<td>"+item.num+"</td>";
-					if(item.photo==="no")  //db에 no라고 저장이 되어있으면 이렇게 해주어야 한다.
-						s+="<td>"+item.subject+"</td>";
-					else{
-						s+="<td>"+item.subject+"&nbsp;&nbsp;"+`<i class="bi bi-file-earmark-image"></i>`+"</td>"; //사진이 있을 경우 사진이 있다는 아이콘이 나오게 한다.
-					};
-					s+="<td>"+item.writer+"</td>";
-					s+="<td>"+item.writeday+"</td>";
-					s+="<td>"+item.readcount+"</td>";
-					s+="</tr>"
+					s+=
+					`
+					<tr>
+						<td>
+							<h5><b class="subject" style="cursor:pointer">${item.subject}</b></h5>
+							<div style="margin-left:20px;color;gray" class="content">
+								<pre>${item.content}</pre>
+							</div>
+							<div>
+								<span>${item.writer}</span>&nbsp;&nbsp;
+								<span class="day">${item.writeday}
+									&nbsp;&nbsp;
+									조회 ${item.readcount}
+								</span>
+							</div>
+						</td>
+					</tr>
+					`;
 				});
-				s+="</tbody></table>";			
+				s+="</table>"		
 				$(".list").html(s);
 		    },
 			statusCode:{

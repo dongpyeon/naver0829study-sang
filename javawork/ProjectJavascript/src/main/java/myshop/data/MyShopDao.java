@@ -47,6 +47,44 @@ public class MyShopDao {
 		return list;
 	}
 
+	//검색결과 출력
+	public List<MyShopDto> getSearchSangpum(String search)
+	{
+		List<MyShopDto> list=new Vector<MyShopDto>();
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from myshop where sangpum like ? order by num";
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, "%"+search.trim()+"%");
+			rs=pstmt.executeQuery();
+
+			while(rs.next())
+			{
+				MyShopDto dto=new MyShopDto();//반드시 while문 안에 선언
+				dto.setNum(rs.getInt("num"));
+				dto.setSangpum(rs.getString("sangpum"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPhoto(rs.getString("photo"));
+				dto.setColor(rs.getString("color"));
+				dto.setWriteday(rs.getTimestamp("writeday"));
+				//list 에 추가
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return list;
+	}
+	
+	
 	//insert
 	public void insertShop(MyShopDto dto)
 	{
