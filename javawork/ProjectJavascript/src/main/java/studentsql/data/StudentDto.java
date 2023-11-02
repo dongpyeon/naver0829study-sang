@@ -8,6 +8,7 @@ public class StudentDto {
 	private String blood;
 	private String phone;
 	private Timestamp writeday;
+	
 	public String getNum() {
 		return num;
 	}

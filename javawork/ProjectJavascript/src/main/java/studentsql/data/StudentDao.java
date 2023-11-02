@@ -54,7 +54,7 @@ public class StudentDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
 		String sql =
-				"select * from student where name like ? order by num";
+				"select * from student where name like ? order by num desc";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			//바인딩
@@ -69,7 +69,7 @@ public class StudentDao {
 				dto.setBlood(rs.getString("blood"));
 				dto.setPhone(rs.getString("phone"));
 				dto.setWriteday(rs.getTimestamp("writeday"));
-				
+				//list에 추가
 				list.add(dto);
 			}
 		} catch (SQLException e) {
@@ -127,7 +127,7 @@ public class StudentDao {
 				blood,
 				phone,
 				writeday
-				),
+				)
 				VALUES
 				(
 				?,
@@ -141,11 +141,10 @@ public class StudentDao {
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
-			
+			//바인딩
 			pstmt.setString(1, dto.getName());
 			pstmt.setString(2, dto.getBlood());
 			pstmt.setString(3, dto.getPhone());
-			
 			//실행
 			pstmt.execute();
 		} catch (SQLException e) {

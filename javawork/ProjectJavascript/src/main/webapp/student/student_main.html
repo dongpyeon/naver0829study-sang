@@ -11,6 +11,16 @@
 	body * {
 		font-family: 'Jua';
 	}
+	
+	table tr th{
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	table tr td {
+		font-size: 20px;
+	}
+	
 	span{
 		font-size:20px;
 		margin: 5px; 
@@ -58,19 +68,18 @@
 				url:"studentlist.jsp",
 				data:{"search":search},
 				success:function(res){
-					let s = `<table class="table table-striped" style="width:700px;">`;
+					let s = `<table class="table table-striped" style="width:800px;">`;
 					s+=
 						`
 						<tr>
-							<th width="50" style="text-align: center">번호</th>
-							<th width="80" style="text-align: center">이름</th>
-							<th width="70" style="text-align: center">혈액형</th>
-							<th width="150" style="text-align: center">전화번호</th>
-							<th width="150" style="text-align: center">등록일</th>
+							<th width="50">번호</th>
+							<th width="80">이름</th>
+							<th width="70">혈액형</th>
+							<th width="250">전화번호</th>
+							<th width="250">등록일</th>
 						</tr>
 						`
 					$.each(res,function(idx,item){
-						console.log(res);
 						s+=
 						`
 						<tr>
@@ -94,7 +103,7 @@
 </head>
 <body>
 	<div style="margin:40px;">
-		<div class="input-group" style="width:400px;">
+		<div class="input-group" style="width:400px; float:right;">
 				<span>학생 검색</span>
 				<input type="text" id="txtword" class="form-control" style="width:150; margin-left:20px;">			
 				&nbsp;&nbsp;

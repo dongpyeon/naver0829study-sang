@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex3_OracleShopDelete"/>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex4_MysqlSawonDelete"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex5_OracleShopUpdate"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex6_MysqlSawonUpdate"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex7_SawonCrud"/>
@@ -47,17 +45,19 @@
     <fullyQualifiedTypeName name="simpleboarddata.SimpleBoardDto"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.AbandonedConnectionCleanupThread"/>
     <fullyQualifiedTypeName name="mygaspard.MygaspardDto"/>
-    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
     <fullyQualifiedTypeName name="simpleboarddata.AnswerBoardDao"/>
     <fullyQualifiedTypeName name="simpleboarddata.AnswerBoardDto"/>
     <fullyQualifiedTypeName name="mysql.db.Dbgaspard"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="mygaspard.GaspardReplyDto"/>
+    <fullyQualifiedTypeName name="mygaspard.GaspardBoardDto"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="mygaspard.GaspardReplyDto"/>
-    <fullyQualifiedTypeName name="mygaspard.GaspardBoardDto"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="studentsql.data.StudentDto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
