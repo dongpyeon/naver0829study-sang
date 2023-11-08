@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex5_OracleShopUpdate"/>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex6_MysqlSawonUpdate"/>
-    <fullyQualifiedTypeName name="bit701.day0925.Ex7_SawonCrud"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex8_SawonSearch"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
     <fullyQualifiedTypeName name="bit701.day0925.Ex9_StudentCrud"/>
-    <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
     <fullyQualifiedTypeName name="java.security.Timestamp"/>
     <fullyQualifiedTypeName name="afterclass.Ex_Mysqlpractice"/>
     <fullyQualifiedTypeName name="afterclass.DbPractice"/>
@@ -39,7 +35,6 @@
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="myshop.data.MyShopDto"/>
     <fullyQualifiedTypeName name="myshop.data.MyShopDao"/>
     <fullyQualifiedTypeName name="java.sql.Time"/>
     <fullyQualifiedTypeName name="simpleboarddata.SimpleBoardDto"/>
@@ -53,11 +48,16 @@
     <fullyQualifiedTypeName name="mygaspard.GaspardBoardDto"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="mysql.db.DbConnect"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="studentsql.data.StudentDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="study.day1108.MyShopServletList"/>
+    <fullyQualifiedTypeName name="myshop.data.MyShopDto"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>
