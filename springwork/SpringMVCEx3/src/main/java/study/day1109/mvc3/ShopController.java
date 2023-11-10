@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller  // controller만들면 항상 이걸 넣어주어야 한다.
 public class ShopController {
@@ -105,6 +106,24 @@ public class ShopController {
 		model.addAttribute("list", list);
 		
 		return "list2";
+	}
+	
+	@GetMapping("/food/photo/detail")
+	public ModelAndView detail()
+	{
+		ModelAndView mview = new ModelAndView();
+		
+		List<String> list = new ArrayList<String>();
+		list.add("10.jpg");
+		list.add("12.jpg");
+		list.add("6.jpg");
+		mview.addObject("food", list);
+		mview.addObject("name", "조주봉");
+		mview.addObject("addr", "서울시 남딘시 낌선현");
+		
+		mview.setViewName("list3");
+		
+		return mview;
 	}
 	
 }

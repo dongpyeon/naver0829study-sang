@@ -34,16 +34,11 @@
 </style>
 </head>
 <body>
-	<h3 class="alert alert-primary">${foodinfo}</h3>
-	<h5>${message}</h5>
-	<c:set var="today" value="<%=new Date() %>"/>
-	<h5><fmt:formatDate value="${today}" pattern="yyyy-MM-dd HH:mm"/></h5>
-	<hr>
-	<c:forEach var="list2" items="${list2}">
-		<div class="photo">
-			<img src="../../photo/${list2}">
-		</div>
-	</c:forEach>	
-	
+	<h2>message:${message}</h2>
+	<h3>날짜 : <fmt:formatDate value="${today}" pattern="yyyy-MM-dd HH:mm"/></h3>
+	<h2>오늘의 브런치 메뉴들</h2>
+	<c:forEach var="photo" items="${list}">
+		<img src="../../photo/${photo}" width="200" height="200" border="1">
+	</c:forEach>
 </body>
 </html>

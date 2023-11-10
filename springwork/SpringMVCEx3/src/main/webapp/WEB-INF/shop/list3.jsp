@@ -33,19 +33,13 @@
 </style>
 </head>
 <body>
-	<h3 class="alert alert-primary">${foodinfo}</h3>
+	<h2>이름 : ${name}</h2>
+	<h3>주소 : ${addr}</h3>
 	<hr>
-	<div>
-		<c:forEach var="dto" items="${list}">
-			<div class="photo">
-				<img src="../../photo/${dto.food}">
-				<figcaption>
-				<h5>${dto.name}</h5>
-				<br>
-				<h5>${dto.addr}</h5>
-				</figcaption>
-			</div>
-		</c:forEach>	
-	</div>
+
+	<c:forEach var="f" items="${food}">
+		<img src="../../photo/${f}" width="200" height="200" border="3">
+	</c:forEach>
+	
 </body>
 </html>
